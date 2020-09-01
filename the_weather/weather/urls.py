@@ -7,5 +7,6 @@ urlpatterns = [
     path('login/' , views.loginPage , name="login"),
     path('logout/' , views.logoutUser , name="logout"),
     path('delete/<city_name>/', views.delete_city, name='delete_city'),
-    
+
 ]
+

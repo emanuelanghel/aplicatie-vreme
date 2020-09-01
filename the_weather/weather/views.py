@@ -122,5 +122,6 @@ def index(request):
 
 def delete_city(request,city_name):
     City.objects.get(name=city_name).delete()
+
     
     return redirect('home')
