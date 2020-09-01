@@ -16,6 +16,8 @@
                 <h1 class="title">
                     Vremea în România!
                 </h1>
+                <span>Hello, {{request.user}} </span>
+                <span><a href="{% url 'logout'%}"><button type="button" class="btn btn-primary">Logout</button></a></span>
             </div>
         </div>
     </section>
@@ -35,6 +37,9 @@
                                 </button>
                             </div>
                         </div>
+                        {% if message %}
+                        <div class="notification {{ message_class }}">{{ message }}</div>
+                        {% endif %}
                     </form>
                 </div>
             </div>
@@ -61,6 +66,11 @@
                                         <br> {{ city_weather.description }}
                                     </p>
                                 </div>
+                            </div>
+                            <div class="media-right">
+                                <a href="{% url 'delete_city' city_weather.city %}"
+                                    <button class="delete"></button>
+                                </a>
                             </div>
                         </article>
                     </div>
